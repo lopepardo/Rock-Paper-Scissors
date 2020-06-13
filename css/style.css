@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;1,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  box-sizing: border-box;
+  font-family: "Courier Prime", monospace;
+}
+
+/* WRAPPER */
+.wrapper {
+  width: 70%;
+  margin: 50px auto 0;
+
+  /* Flexbox */
+  display: flex;
+  flex-direction: column;
+}
+
+/* DISPLAY FOR GAME */
+.display-move {
+  height: 300px;
+  width: 100%;
+
+  /* Flexbox */
+  display: grid;
+  grid-template-columns: 1fr 50px 1fr;
+}
+.player,
+.machine,
+.vs {
+  /* Flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.player h1,
+.machine h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+.vs {
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* DISPLAY FOR MOVE */
+.player-move,
+.machine-move {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.display-move img {
+  width: 200px;
+}
+.machine-move {
+  position: relative;
+}
+
+/* RANDOM MACHINE */
+.random img {
+  left: calc(50% - 100px);
+  position: absolute;
+  -webkit-animation-name: fade;
+  animation-name: fade;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  31% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  31% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.random img:nth-of-type(2) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.random img:nth-of-type(3) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+/* WINNER */
+.win {
+  -webkit-animation: winner 4s ease-in-out forwards;
+  animation: winner 4s ease-in-out forwards;
+}
+
+@-webkit-keyframes winner {
+}
+
+@keyframes winner {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.4);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.buttons-move {
+  margin-top: 20px;
+
+  /* Flexbox */
+  display: flex;
+  justify-content: space-around;
+}
+.btn {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 120px;
+  height: 120px;
+}
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.7;
+  cursor: default;
+}
+.btn:hover {
+  -webkit-animation: scale 500ms ease-in-out forwards;
+  animation: scale 500ms ease-in-out forwards;
+}
+@-webkit-keyframes scale {
+  to {
+    transform: scale(1.2);
+  }
+}
+@keyframes scale {
+  to {
+    transform: scale(1.2);
+  }
+}
+.btn-rock {
+  background-image: url("../img/rock.png");
+}
+.btn-paper {
+  background-image: url("../img/paper.png");
+}
+.btn-scissors {
+  background-image: url("../img/scissors.png");
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    width: 90%;
+    margin: 50px auto 0;
+  }
+  .display-move {
+    height: 150px;
+  }
+  .display-move img {
+    width: 100px;
+  }
+  .random img {
+    left: calc(50% - 50px);
+    position: absolute;
+  }
+  .player h1,
+  .machine h1 {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .btn {
+    width: 90px;
+    height: 90px;
+  }
+  .btn:hover {
+    -webkit-animation: none;
+    animation: none;
+  }
+}

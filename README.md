@@ -3,7 +3,7 @@ Juego simple diseñado con orientación a objetos en donde el jugador juega cont
 El jugador realiza la selección de una de tres opciones piedra, papel o tijeras. 
 La máquina selecciona una de estas 3 opciones aleatoriamente.
 
-Disponible en: https://luisfelipel.github.io/Rock-Paper-Scissors/
+Disponible en: https://lopexpardo.github.io/Rock-Paper-Scissors/
 
 ## Tablero del juego
 <p align="center">
